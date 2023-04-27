@@ -1,0 +1,7 @@
+.description-element {
+    height: 700px;
+    width: 400px;
+    border-style: dotted;
+    border-color: black;
+    border-radius: 5px;
+}

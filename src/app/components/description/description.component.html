@@ -1,0 +1,17 @@
+<div *ngIf="isComponentVisible" 
+    class="description-element">
+    <div *ngIf="myData">{{ myData[0].word }}</div>
+    <div *ngIf="myData">{{ myData[0].phonetics[0].audio }}</div>
+    <p *ngIf="myData">{{ myData[0].phonetic }}</p>
+    
+    <div *ngFor="let item of myData">
+        <div *ngFor="let speechPart of item.meanings">{{ speechPart.partOfSpeech }}
+            <p>Meaning</p>
+            <ul *ngFor="let meaning of speechPart.definitions"> 
+                <li>{{ meaning.definition }}</li>
+            </ul>
+            <div *ngIf="speechPart.synonyms">Synonyms {{ speechPart.synonyms }}</div>
+        </div>
+    </div>
+    <p *ngIf="myData">Source https://en.wiktionary.org/wiki/{{myData[0].word}}</p>
+</div>
